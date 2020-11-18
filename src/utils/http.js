@@ -457,3 +457,56 @@ export const reqgoodsCount = () => {
 }
 
 // ===========商品管理接口 结束====================
+
+//------------限时秒杀接口   开始----------------------
+
+// 8.添加
+export const reqseckAdd = (user) => {
+    return axios({
+        url: baseUrl + "/api/seckadd",
+        method: "post",
+        data: qs.stringify(user)
+    })
+}
+
+//18.列表
+export const reqseckList = () => {
+        return axios({
+            url: baseUrl + "/api/secklist",
+            method: "get",
+        })
+    }
+    //26.删除
+export const reqseckDel = (id) => {
+    return axios({
+        url: baseUrl + "/api/seckdelete",
+        method: "post",
+        data: qs.stringify({
+            id: id
+        })
+    })
+}
+
+// 33.详情
+export const reqseckDetail = id => {
+    return axios({
+        url: baseUrl + "/api/seckinfo",
+        method: "get",
+        params: {
+            id: id
+        }
+    })
+}
+
+// 38.修改
+export const reqseckUpdate = (id) => {
+    return axios({
+        url: baseUrl + "/api/seckedit",
+        method: "post",
+        data: qs.stringify(id)
+    })
+}
+
+
+
+//------------限时秒杀接口   结束----------------------

@@ -8,6 +8,7 @@ import cate from "./modules/cate"
 import specs from "./modules/specs"
 import vip from "./modules/vip"
 import goods from "./modules/goods"
+import seckill from "./modules/seckill"
 export default new Vuex.Store({
     state,
     mutations,
@@ -17,6 +18,7 @@ export default new Vuex.Store({
         cate,
         specs,
         vip,
-        goods
+        goods,
+        seckill
     }
 })

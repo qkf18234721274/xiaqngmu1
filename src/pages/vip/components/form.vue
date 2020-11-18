@@ -43,7 +43,9 @@ export default {
     }
   },
   computed: {
-    ...mapGetters({}),
+    ...mapGetters({
+      list:"vip/list"
+    }),
   },
   methods: {
     ...mapActions({
@@ -79,7 +81,10 @@ export default {
         if( this.user.password==""){
             this.user.password= this.passwords
         }
-      reqvipRedit(this.user).then((res) => {
+      reqvipRedit(this.user.uid).then((res) => {
+        console.log(res);
+        console.log(this.user);
+        
         if (res.data.code == 200) {
           successAlert('修改成功')
           this.empty()
@@ -94,7 +99,9 @@ export default {
       }
     }
   },
-  mounted() {},
+  mounted() {
+    this.reqList()
+  },
 }
 </script>
 <style scoped>

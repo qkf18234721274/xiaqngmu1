@@ -65,7 +65,7 @@ export default {
   mounted() {
     //20.一进来发请求
     this.init();
-    this.getCount();
+   
   }
 };
 </script>

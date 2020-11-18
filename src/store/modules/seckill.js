@@ -1,30 +1,38 @@
-import { reqcateList } from "../../utils/http"
+import { reqseckList } from "../../utils/http"
 const state = {
     //分类list
-    list: []
+    list: [],
 }
 
 const mutations = {
     //修改list
     changeList(state, arr) {
         state.list = arr;
-    }
+        console.log(state.list);
+    },
 }
 
 const actions = {
     //发起请求
     reqList(context) {
         //发请求，成功之后，修改list
-        reqcateList({ istree: true }).then(res => {
+        reqseckList().then(res => {
             context.commit("changeList", res.data.list)
         })
-    }
+    },
 }
 
 const getters = {
     list(state) {
         return state.list
-    }
+    },
+    total(state) {
+        return state.total
+    },
+    size(state) {
+        return state.size
+    },
+
 }
 
 export default {

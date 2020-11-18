@@ -24,9 +24,10 @@ const mutations = {
 
 const actions = {
     //发起请求
-    reqList(context) {
-        //发请求，成功之后，修改list
-        reqgoodsList({ page: context.state.page, size: context.state.size }).then(res => {
+    reqList(context, bool) {
+        let params = bool ? {} : { page: context.state.page, size: context.state.size }
+            //发请求，成功之后，修改list
+        reqgoodsList(params).then(res => {
             let list = res.data.list ? res.data.list : []
 
             if (list.length == 0 && context.state.page > 1) {
