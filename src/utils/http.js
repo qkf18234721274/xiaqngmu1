@@ -374,14 +374,12 @@ export const reqvipInfo = (uid) => {
 }
 
 
-export const reqvipRedit = (uid) => {
+export const reqvipRedit = (user) => {
 
     return axios({
         url: baseUrl + "/api/memberedit",
         method: "post",
-        data: {
-            uid: uid
-        }
+        data: qs.stringify(user)
     })
 }
 

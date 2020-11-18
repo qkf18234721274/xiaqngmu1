@@ -81,7 +81,7 @@ export default {
         if( this.user.password==""){
             this.user.password= this.passwords
         }
-      reqvipRedit(this.user.uid).then((res) => {
+      reqvipRedit(this.user).then((res) => {
         console.log(res);
         console.log(this.user);
         
