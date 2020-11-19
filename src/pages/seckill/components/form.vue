@@ -2,7 +2,7 @@
   <div>
     <el-dialog :title="info.title" :visible.sync="info.isshow" @opened="opened" @closed="closed">
       <el-form :model="user" :rules="rules">
-        {{user}}
+      
         <el-form-item label="活动名称" label-width="120px">
           <el-input v-model="user.title" placeholder="请输入活动名称"></el-input>
         </el-form-item>

@@ -508,3 +508,71 @@ export const reqseckUpdate = (id) => {
 
 
 //------------限时秒杀接口   结束----------------------
+
+
+// ===========轮播图 开始====================
+
+// 8.添加 文件
+export const reqbannerAdd = (cate) => {
+    // cate={name:12,img:File,age:20}
+
+    let d = new FormData()
+        /*
+        d.append("name",12)
+        d.append("img",file)
+        d.append("age",20)
+        */
+
+    for (let i in cate) {
+        d.append(i, cate[i])
+    }
+
+    return axios({
+        url: baseUrl + "/api/banneradd",
+        method: "post",
+        data: d
+    })
+}
+
+//18.列表 p={istree:true}  p={pid:1}
+export const reqbannerList = (p) => {
+    return axios({
+        url: baseUrl + "/api/bannerlist",
+        method: "get",
+        params: p
+    })
+}
+
+//详情
+export const reqbannerInfo = (id) => {
+        return axios({
+            url: baseUrl + "/api/bannerinfo",
+            method: "get",
+            params: { id: id }
+        })
+    }
+    //26.删除
+export const reqbannerDel = (id) => {
+    return axios({
+        url: baseUrl + "/api/bannerdelete",
+        method: "post",
+        data: qs.stringify({
+            id: id
+        })
+    })
+}
+
+// 38.修改 文件
+export const reqbannerUpdate = (cate) => {
+    let d = new FormData()
+    for (let i in cate) {
+        d.append(i, cate[i])
+    }
+    return axios({
+        url: baseUrl + "/api/banneredit",
+        method: "post",
+        data: d
+    })
+}
+
+// ===========轮播图 结束====================
